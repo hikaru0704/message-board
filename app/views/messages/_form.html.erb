@@ -1,6 +1,6 @@
+
 <%= form_for(@message) do |f| %>
   <% if @message.errors.present? %>
-    <div class="alert alert-danger">
       <%= alert %>
       <ul>
         <% @message.errors.full_messages.each do |full_message| %>
@@ -13,9 +13,12 @@
   <% end %>
 
   名前:
+  <br>
   <%= f.text_field :name %>
-
+  <br>
+  <br>
   内容:
-  <%= f.text_field :body %>
+  <textarea class="form-control" rows="3"></textarea>
+  <br>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
